@@ -1,7 +1,8 @@
 import random
 
 print('Let\'s play hangman!')
-
+print('If you would live to see a list of the letters you have already guessed, type in \'help\'.')
+print('If you think you know the word and would like to guess, type in \'guess answer\'.')
 # bank of random words
 words = ['study', 'world', 'python', 'coder', 'confuse']
 
@@ -18,10 +19,26 @@ while playGame == True:
     solution = ['_' for i in word]
     print(join.join(solution))
     print('Lives Left: ', lives)
+
+    #loop in which a round is played, ends once game is won or lost
     while wordFound == False:
+        #collect input
         userInput = input('Guess a letter: ')
         guess = userInput.lower()
 
+        #if 'help' is entered display used letters
+        if guess == 'help':
+            print('You have already guessed:', ', '.join(usedLetters))
+            continue
+        if guess == 'guess answer':
+            guess = input('You can guess the word now: ').lower()
+            if guess == word:
+                print('That\'s right! You won!')
+            else:
+                print('Sorry that is incorrect')
+            break
+
+        #if 
         # make sure guess is valid
         if len(guess) != 1 or not (guess.isalpha()):
             print('Not a valid guess. Please enter a single letter.')
@@ -58,7 +75,7 @@ while playGame == True:
             print('Word guessed, you\'ve won!')
     
     
-    # check if user wants to keep playing
+    # check if user wants to keep playing and validate options
     valid = False
     while (valid == False):
         play = input('Play again? (yes/no)\n')
