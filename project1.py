@@ -30,6 +30,7 @@ while playGame == True:
         if guess == 'help':
             print('You have already guessed:', ', '.join(usedLetters))
             continue
+        #if 'guess answer' is entered allow the user to guess the word
         if guess == 'guess answer':
             guess = input('You can guess the word now: ').lower()
             if guess == word:
@@ -37,8 +38,7 @@ while playGame == True:
             else:
                 print('Sorry that is incorrect')
             break
-
-        #if 
+ 
         # make sure guess is valid
         if len(guess) != 1 or not (guess.isalpha()):
             print('Not a valid guess. Please enter a single letter.')
