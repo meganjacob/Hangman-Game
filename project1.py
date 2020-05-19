@@ -4,7 +4,7 @@ print('Let\'s play hangman!')
 print('If you would live to see a list of the letters you have already guessed, type in \'help\'.')
 print('If you think you know the word and would like to guess, type in \'guess answer\'.')
 # bank of random words
-words = ['study', 'world', 'python', 'coder', 'confuse']
+words = ['study', 'world', 'python', 'coder', 'confuse', 'wonderful', 'forgive', 'water']
 
 # initializing beginning values
 playGame = True
